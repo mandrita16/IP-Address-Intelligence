@@ -192,6 +192,12 @@ http://127.0.0.1:5000
 
 The application is now ready to use.
 
+<img width="1920" height="1009" alt="image" src="https://github.com/user-attachments/assets/9b3fcbe3-7331-4611-b6f3-ffc7a1483e73" />
+<img width="1920" height="1000" alt="image" src="https://github.com/user-attachments/assets/5488057a-8b42-4633-b144-bac9923d6965" />
+<img width="1920" height="1026" alt="image" src="https://github.com/user-attachments/assets/d238363e-88ed-48f4-aaa7-c0cb7d980f25" />
+<img width="1920" height="1021" alt="image" src="https://github.com/user-attachments/assets/fcaf39ad-942f-4e25-9ba9-d6dd2bb3360a" />
+<img width="1920" height="1030" alt="image" src="https://github.com/user-attachments/assets/77ffcace-3408-439b-ac7c-820c64b3478f" />
+
 ## 🔌 API Endpoints
 
 The Flask backend exposes the following endpoints:
