@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Finder | Network Intelligence</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <main class="container">
+        <header class="topbar">
+            <a href="/" class="brand">
+                <span class="brand-icon">⌁</span>
+                <span>IP<span class="accent">FINDER</span></span>
+            </a>
+            <span class="status">
+                <span class="status-dot"></span>
+                NETWORK INTELLIGENCE
+            </span>
+        </header>
+
+        <section class="hero">
+            <p class="eyebrow">PUBLIC IP LOOKUP TOOL</p>
+            <h1>Discover your <span class="gradient-text">digital identity.</span></h1>
+            <p class="subtitle">
+                Explore IP addresses, network information and approximate
+                geographical locations — all in one place.
+            </p>
+        </section>
+
+        <section class="search-panel">
+            <label for="ipInput">ENTER AN IP ADDRESS</label>
+
+            <div class="search-row">
+                <input
+                    type="text"
+                    id="ipInput"
+                    placeholder="e.g. 8.8.8.8 or 2001:4860:4860::8888"
+                    autocomplete="off"
+                />
+                <button id="searchBtn">Explore IP <span>→</span></button>
+            </div>
+
+            <div class="search-footer">
+                <button id="myIpBtn" class="text-button">
+                    ◎ Detect my IP
+                </button>
+                <span>Supports IPv4 and IPv6</span>
+            </div>
+        </section>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+
+        <section id="results" class="results hidden">
+            <div class="result-heading">
+                <div>
+                    <p class="eyebrow">LOOKUP RESULTS</p>
+                    <h2>IP Intelligence Report</h2>
+                </div>
+                <div class="result-actions">
+                    <button id="copyBtn" class="secondary-btn">Copy IP</button>
+                    <button id="exportBtn" class="secondary-btn">Export JSON ↓</button>
+                </div>
+            </div>
+
+            <div class="ip-highlight">
+                <div>
+                    <span class="muted-label">IP ADDRESS</span>
+                    <h2 id="ipAddress">—</h2>
+                </div>
+                <span id="ipVersion" class="version-badge">IPv4</span>
+            </div>
+
+            <div class="info-grid">
+                <article class="info-card">
+                    <span class="card-icon">⌖</span>
+                    <p class="muted-label">LOCATION</p>
+                    <h3 id="location">—</h3>
+                    <p id="coordinates" class="card-description">Coordinates unavailable</p>
+                </article>
+
+                <article class="info-card">
+                    <span class="card-icon">◉</span>
+                    <p class="muted-label">COUNTRY</p>
+                    <h3 id="country">—</h3>
+                    <p id="continent" class="card-description">—</p>
+                </article>
+
+                <article class="info-card">
+                    <span class="card-icon">⌘</span>
+                    <p class="muted-label">ISP / ORGANIZATION</p>
+                    <h3 id="isp">—</h3>
+                    <p id="asn" class="card-description">—</p>
+                </article>
+
+                <article class="info-card">
+                    <span class="card-icon">◷</span>
+                    <p class="muted-label">TIMEZONE</p>
+                    <h3 id="timezone">—</h3>
+                    <p id="utcOffset" class="card-description">—</p>
+                </article>
+            </div>
+
+            <section class="map-section">
+                <div class="map-heading">
+                    <div>
+                        <p class="eyebrow">GEOGRAPHIC OVERVIEW</p>
+                        <h3>Approximate IP Location</h3>
+                    </div>
+                    <span class="map-tag">LIVE MAP</span>
+                </div>
+                <div id="map"></div>
+                <p class="map-note">
+                    Location is estimated using IP geolocation and may not
+                    represent the exact physical address.
+                </p>
+            </section>
+
+            <section class="details-section">
+                <p class="eyebrow">ADDITIONAL INFORMATION</p>
+                <h3>Network Details</h3>
+
+                <div class="details-list">
+                    <div><span>Region</span><strong id="region">—</strong></div>
+                    <div><span>Postal Code</span><strong id="postal">—</strong></div>
+                    <div><span>ASN</span><strong id="asnDetail">—</strong></div>
+                    <div><span>Continent</span><strong id="continentDetail">—</strong></div>
+                </div>
+            </section>
+        </section>
+
+        <footer>
+            <p>IP FINDER <span>·</span> Built with Python & Flask</p>
+            <p>Geolocation data is approximate, not an exact address.</p>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
